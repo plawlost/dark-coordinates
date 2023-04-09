@@ -4,6 +4,10 @@
   "manifest_version": 2,
   "description": "Displays live mouse coordinates in a dark theme",
   "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png",
     "500": "icon.png"
   },
   "permissions": [
@@ -15,7 +19,8 @@
   },
   "browser_action": {
     "default_icon": {
-      "500": "icon.png",
+      "16": "icon.png",
+      "32": "icon.png"
     },
     "default_title": "Dark Coordinates",
     "default_popup": "popup.html"
