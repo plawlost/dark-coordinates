@@ -15,8 +15,7 @@
   },
   "browser_action": {
     "default_icon": {
-      "16": "icons/16.png",
-      "32": "icons/32.png"
+      "500": "icon.png",
     },
     "default_title": "Dark Coordinates",
     "default_popup": "popup.html"
