@@ -1,0 +1,26 @@
+{
+  "name": "Dark Coordinates",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Displays live mouse coordinates in a dark theme",
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    },
+    "default_title": "Dark Coordinates",
+    "default_popup": "popup.html"
+  }
+}
