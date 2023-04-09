@@ -31,4 +31,3 @@ coordinatesContainer.addEventListener("click", function() {
 window.addEventListener("unload", function() {
   document.removeEventListener("mousemove", updateCoordinates);
 });
-
