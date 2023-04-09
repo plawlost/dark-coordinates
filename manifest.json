@@ -2,10 +2,10 @@
   "name": "Dark Coordinates",
   "version": "1.0",
   "manifest_version": 3,
-   "permissions": [
-     "storage",
-     "tabs"
-  ], 
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
   "description": "Displays live mouse coordinates in a dark theme",
   "icons": {
     "16": "icon.png",
