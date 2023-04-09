@@ -1,81 +1,55 @@
-#coordinates-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 180px;
-  height: 60px;
-  background-color: #1e1e1e;
-  color: #bfbfbf;
-  padding: 15px;
-  opacity: 0.9;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #000;
-  z-index: 9999;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  width: 300px;
+  height: 200px;
+  margin: 20px auto;
+  background-color: #252525;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px #000000;
+  overflow: hidden;
+}
+
+.header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  background-color: #2c2c2c;
+  border-bottom: 1px solid #404040;
 }
 
-#coordinates-container:before,
-#coordinates-container:after {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #bfbfbf;
+.header h1 {
+  font-size: 24px;
 }
 
-#coordinates-container:before {
-  width: 60%;
-  height: 2px;
-  top: 50%;
-  left: 20%;
-  transform: translateY(-50%);
+.header img {
+  width: 30px;
+  height: 30px;
 }
 
-#coordinates-container:after {
-  width: 2px;
-  height: 60%;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+.content {
+  padding: 20px;
+}
+
+.content p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #coordinates {
-  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
-  margin: 0;
-  position: relative;
-}
-
-#coordinates span {
-  font-size: 14px;
-  font-weight: 400;
-  margin-left: 10px;
-  color: #bfbfbf;
-}
-
-@media screen and (max-width: 768px) {
-  #coordinates-container {
-    bottom: 20px;
-    right: 50%;
-    transform: translateX(50%);
-    border-radius: 10px 10px 0 0;
-    width: 150px;
-    height: 50px;
-  }
-
-  #coordinates:before {
-    width: 40%;
-    left: 30%;
-  }
-
-  #coordinates:after {
-    height: 40%;
-    top: 30%;
-  }
-
-  #coordinates span {
-    font-size: 12px;
-    margin-left: 8px;
-  }
+  font-weight: bold;
 }
