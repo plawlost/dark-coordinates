@@ -12,10 +12,12 @@ function updateCoordinates(event) {
 document.addEventListener("mousemove", updateCoordinates);
 
 // When the extension is opened, set the focus on the coordinates container to enable scrolling
-coordinatesContainer.focus();
+window.addEventListener("load", function() {
+  coordinatesContainer?.focus();
+});
 
 // Add a click event listener to the coordinates container to copy the coordinates to the clipboard
-coordinatesContainer.addEventListener("click", function() {
+coordinatesContainer?.addEventListener("click", function() {
   // Create a temporary input element to copy the coordinates to the clipboard
   const input = document.createElement("input");
   input.setAttribute("value", coordinates.textContent);
