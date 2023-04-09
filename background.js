@@ -1,42 +1,36 @@
-const theme = 'dark';
-const opacity = 0.8;
+chrome.action.onClicked.addListener((tab) => {
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    function: () => {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        body {
+          position: relative;
+        }
+        .coordinates {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+          background-color: #333;
+          color: #fff;
+          padding: 5px 10px;
+          font-size: 16px;
+          font-family: sans-serif;
+          border-radius: 5px;
+          z-index: 999999999;
+        }
+      `;
+      document.head.appendChild(style);
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.set({
-    theme,
-    opacity
-  });
-});
+      const coordinatesContainer = document.createElement('div');
+      coordinatesContainer.classList.add('coordinates');
+      document.body.appendChild(coordinatesContainer);
 
-chrome.tabs.onActivated.addListener((activeInfo) => {
-  chrome.tabs.executeScript(activeInfo.tabId, { file: 'content.js' }, () => {
-    if (chrome.runtime.lastError) {
-      console.error(chrome.runtime.lastError.message);
+      document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        coordinatesContainer.textContent = `X: ${x}, Y: ${y}`;
+      });
     }
   });
-});
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === 'updateCoordinates') {
-    const coordinates = message.coordinates;
-
-    chrome.tabs.insertCSS(sender.tab.id, {
-      code: `
-        #coordinates-container {
-          background-color: ${theme === 'dark' ? 'black' : 'white'};
-          color: ${theme === 'dark' ? 'white' : 'black'};
-          opacity: ${opacity};
-        }
-      `
-    }, () => {
-      if (chrome.runtime.lastError) {
-        console.error(chrome.runtime.lastError.message);
-      }
-    });
-
-    chrome.tabs.sendMessage(sender.tab.id, {
-      action: 'updateCoordinates',
-      coordinates
-    });
-  }
 });
