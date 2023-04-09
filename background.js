@@ -8,7 +8,7 @@ chrome.action.onClicked.addListener((tab) => {
           position: relative;
         }
         .coordinates {
-          position: fixed;
+          position: absolute;
           bottom: 10px;
           right: 10px;
           background-color: #333;
@@ -30,6 +30,12 @@ chrome.action.onClicked.addListener((tab) => {
         const x = event.clientX;
         const y = event.clientY;
         coordinatesContainer.textContent = `X: ${x}, Y: ${y}`;
+      });
+
+      // Send message to content.js to update the coordinates
+      chrome.runtime.sendMessage({
+        x: event.clientX,
+        y: event.clientY
       });
     }
   });

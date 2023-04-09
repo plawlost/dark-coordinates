@@ -6,6 +6,26 @@ const coordinates = document.getElementById("coordinates");
 function updateCoordinates(event) {
   // Update the text of the coordinates to show the current mouse position
   coordinates.textContent = `${event.clientX}, ${event.clientY}`;
+
+  // Set the position of the coordinates container to follow the mouse
+  const containerWidth = coordinatesContainer.offsetWidth;
+  const containerHeight = coordinatesContainer.offsetHeight;
+  const pageWidth = document.documentElement.clientWidth;
+  const pageHeight = document.documentElement.clientHeight;
+  const x = event.clientX + 10;
+  const y = event.clientY + 10;
+
+  if ((x + containerWidth) > pageWidth) {
+    coordinatesContainer.style.left = (pageWidth - containerWidth) + "px";
+  } else {
+    coordinatesContainer.style.left = x + "px";
+  }
+
+  if ((y + containerHeight) > pageHeight) {
+    coordinatesContainer.style.top = (pageHeight - containerHeight) + "px";
+  } else {
+    coordinatesContainer.style.top = y + "px";
+  }
 }
 
 // Add an event listener to update the coordinates when the mouse moves
