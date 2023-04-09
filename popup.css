@@ -2,6 +2,8 @@
   position: fixed;
   top: 20px;
   right: 20px;
+  width: 180px;
+  height: 60px;
   background-color: #1e1e1e;
   color: #bfbfbf;
   padding: 15px;
@@ -9,42 +11,40 @@
   border-radius: 20px;
   box-shadow: 0 0 20px #000;
   z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#coordinates-container:before,
+#coordinates-container:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #bfbfbf;
+}
+
+#coordinates-container:before {
+  width: 60%;
+  height: 2px;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+}
+
+#coordinates-container:after {
+  width: 2px;
+  height: 60%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #coordinates {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 180px;
   position: relative;
-}
-
-#coordinates:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 60%;
-  height: 2px;
-  top: 50%;
-  left: 20%;
-  background-color: #bfbfbf;
-  transform: translateY(-50%);
-}
-
-#coordinates:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 2px;
-  height: 60%;
-  top: 20%;
-  left: 50%;
-  background-color: #bfbfbf;
-  transform: translateX(-50%);
 }
 
 #coordinates span {
@@ -56,17 +56,12 @@
 
 @media screen and (max-width: 768px) {
   #coordinates-container {
-    top: auto;
     bottom: 20px;
     right: 50%;
     transform: translateX(50%);
     border-radius: 10px 10px 0 0;
-  }
-
-  #coordinates {
-    font-size: 18px;
-    height: 50px;
     width: 150px;
+    height: 50px;
   }
 
   #coordinates:before {
