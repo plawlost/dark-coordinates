@@ -28,4 +28,5 @@ If you find a bug or have a suggestion for improving Dark Coordinates, feel free
 
 ## License
 
-Dark Coordinates is released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code as you see fit.
+Dark Coordinates is released under the [MIT License](https://opensource.org/licenses/MIT).
+Feel free to use, modify, and distribute the code as you see fit.
