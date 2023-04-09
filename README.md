@@ -1,6 +1,6 @@
 # Dark Coordinates
 
-(preview.png)
+!(preview.png)
 
 Dark Coordinates is a simple Chrome extension that displays live mouse coordinates in a dark theme and might be useful for some devs. The extension uses a browser action to display the coordinates in a fixed position on the screen, and updates the display in real-time as the mouse moves.
 
