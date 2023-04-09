@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "description": "Displays live mouse coordinates in a dark theme",
   "icons": {
-    "500": "icons:16.png"
+    "500": "icon.png"
   },
   "permissions": [
     "activeTab"
